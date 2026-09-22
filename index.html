@@ -3,8 +3,36 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Travailler en France</title>
+
   <link rel="stylesheet" href="style.css">
+
+  <style>
+    .hidden {
+      display: none;
+    }
+
+    .valid {
+      color: green;
+    }
+
+    .payment {
+      background: #f1f8f4;
+      padding: 15px;
+      border-radius: 10px;
+      margin: 15px 0;
+    }
+
+    .payment strong {
+      color: #008f4c;
+    }
+
+    .info {
+      font-size: 13px;
+      color: #555;
+    }
+  </style>
 </head>
 
 <body>
@@ -16,36 +44,148 @@
 
 <main>
 
-<section class="hero">
-  <h1>Trouvez votre opportunité de travail en France</h1>
-  <p>Inscrivez-vous et choisissez le métier qui vous intéresse.</p>
-</section>
+  <section class="hero">
+    <h1>Trouvez votre opportunité de travail en France</h1>
+    <p>Inscrivez-vous et choisissez le métier qui vous intéresse.</p>
+  </section>
 
-<section class="card">
-  <h2>Formulaire d'inscription</h2>
+  <section class="card">
 
-  <form id="form">
+    <h2>Formulaire d'inscription</h2>
 
-    <label>
-      Nom et prénom
-      <input id="nom" type="text" required>
-    </label>
+    <form
+      action="https://formspree.io/f/xrpbqngr"
+      method="POST"
+      enctype="multipart/form-data"
+    >
 
-    <label>
-      Adresse e-mail
-      <input id="email" type="email" required>
-    </label>
+      <label>
+        Nom et prénom
+        <input
+          type="text"
+          name="nom"
+          placeholder="Votre nom et prénom"
+          required
+        >
+      </label>
 
-    <label>
-      Pays
-      <select id="pays" required>
-        <option value="">Choisir</option>
-        <option>Bénin</option>
-        <option>Sénégal</option>
-        <option>Togo</option>
-        <option>Niger</option>
-        <option>Côte d'Ivoire</option>
-        <option>Burkina Faso</option>
-        <option>Ghana</option>
-        <option>Autre</option>
-     
+      <label>
+        Adresse e-mail
+        <input
+          type="email"
+          name="email"
+          placeholder="exemple@email.com"
+          required
+        >
+      </label>
+
+      <label>
+        Pays
+        <select name="pays" required>
+          <option value="">Choisir votre pays</option>
+          <option value="Bénin">Bénin</option>
+          <option value="Sénégal">Sénégal</option>
+          <option value="Togo">Togo</option>
+          <option value="Niger">Niger</option>
+          <option value="Côte d'Ivoire">Côte d'Ivoire</option>
+          <option value="Burkina Faso">Burkina Faso</option>
+          <option value="Ghana">Ghana</option>
+          <option value="Autre">Autre</option>
+        </select>
+      </label>
+
+      <label>
+        Numéro WhatsApp
+        <input
+          type="tel"
+          name="whatsapp"
+          placeholder="+229 ..."
+          required
+        >
+      </label>
+
+      <label>
+        Travail recherché
+        <select name="emploi" required>
+          <option value="">Choisir un métier</option>
+          <option value="Chauffeur">Chauffeur</option>
+          <option value="Nounou">Nounou</option>
+          <option value="Ménage">Ménage</option>
+        </select>
+      </label>
+
+      <div class="payment">
+
+        <h3>💳 Paiement de l'inscription</h3>
+
+        <p>
+          Frais d'inscription :
+          <strong>3 200 FCFA</strong>
+        </p>
+
+        <p>
+          Mode de paiement :
+          <strong>Wave</strong>
+        </p>
+
+        <p>
+          Numéro Wave :
+          <strong>+227 77 30 87 60</strong>
+        </p>
+
+        <p class="info">
+          Effectuez le paiement puis joignez la capture d'écran
+          de votre paiement ci-dessous.
+        </p>
+
+      </div>
+
+      <label>
+        📷 Capture du paiement
+
+        <input
+          type="file"
+          name="capture"
+          accept="image/png,image/jpeg,image/webp"
+          required
+        >
+      </label>
+
+      <input
+        type="hidden"
+        name="_subject"
+        value="Nouvelle inscription - Travailler en France"
+      >
+
+      <button type="submit">
+        Envoyer mon inscription
+      </button>
+
+    </form>
+
+  </section>
+
+  <section class="card">
+
+    <h2>📌 Informations</h2>
+
+    <p>
+      Après l'envoi de votre formulaire, votre dossier sera transmis
+      pour vérification.
+    </p>
+
+    <p>
+      Vous devez fournir des informations exactes et une preuve
+      de paiement lisible.
+    </p>
+
+  </section>
+
+</main>
+
+<footer>
+  © 2026 Travailler en France
+</footer>
+
+</body>
+  </html>
