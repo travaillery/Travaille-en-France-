@@ -1,53 +1,44 @@
-const form = document.getElementById('form');
+const form = document.getElementById("form");
 
-form.addEventListener('submit', e => {
-  e.preventDefault();
+if (form) {
+  form.addEventListener("submit", async function (event) {
+    event.preventDefault();
 
-  const f = document.getElementById('capture').files[0];
+    const button = form.querySelector("button[type='submit']");
+    const originalText = button.textContent;
 
-  if (!f) {
-    alert('Veuillez joindre la capture.');
-    return;
-  }
+    button.disabled = true;
+    button.textContent = "Envoi en cours...";
 
-  if (f.size > 5242880) {
-    alert('La capture doit faire moins de 5 Mo.');
-    return;
-  }
+    try {
+      const response = await fetch(form.action, {
+        method: "POST",
+        body: new FormData(form),
+        headers: {
+          "Accept": "application/json"
+        }
+      });
 
-  const r = new FileReader();
+      if (response.ok) {
+        form.reset();
 
-  r.onload = () => {
-    const d = {
-      nom: document.getElementById('nom').value,
-      email: document.getElementById('email').value,
-      pays: document.getElementById('pays').value,
-      whatsapp: document.getElementById('whatsapp').value,
-      emploi: document.getElementById('emploi').value,
-      date: new Date().toLocaleString('fr-FR'),
-      statut: 'Validé',
-      capture: r.result
-    };
+        form.parentElement.innerHTML = `
+          <div style="text-align:center; padding:30px;">
+            <h2>✅ Inscription envoyée</h2>
+            <p>Votre dossier a bien été reçu.</p>
+            <p>Nous allons vérifier votre paiement.</p>
+            <p><strong>Merci pour votre inscription.</strong></p>
+          </div>
+        `;
+      } else {
+        throw new Error("Erreur lors de l'envoi");
+      }
 
-    const a = JSON.parse(
-      localStorage.getItem('inscriptions_travailler_france') || '[]'
-    );
+    } catch (error) {
+      button.disabled = false;
+      button.textContent = originalText;
 
-    a.push(d);
-
-    localStorage.setItem(
-      'inscriptions_travailler_france',
-      JSON.stringify(a)
-    );
-
-    form.closest('.card').classList.add('hidden');
-    document.getElementById('ok').classList.remove('hidden');
-
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
-    });
-  };
-
-  r.readAsDataURL(f);
-});
+      alert("Une erreur est survenue. Veuillez réessayer.");
+    }
+  });
+}
