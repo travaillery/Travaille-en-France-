@@ -1,16 +1,158 @@
-<form
-  action="https://www.formbackend.com/f/f7c0bdd838442f2f"
-  method="POST"
-  enctype="multipart/form-data"
-><input type="text" name="nom" required>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<input type="email" name="email" required>
+  <title>Travailler en France</title>
 
-<select name="pays" required><input type="tel" name="whatsapp" required>
+  <link rel="stylesheet" href="style.css">
+</head>
 
-<select name="emploi" required><input
-  type="file"
-  name="capture"
-  accept="image/png,image/jpeg,image/webp"
-  required
->
+<body>
+
+<header>
+  🇫🇷 <b>Travailler en France</b>
+  <small>Inscription aux offres d'emploi</small>
+</header>
+
+<main>
+
+  <section class="hero">
+    <h1>Trouvez votre opportunité de travail en France</h1>
+    <p>Inscrivez-vous et choisissez le métier qui vous intéresse.</p>
+  </section>
+
+  <section class="card">
+
+    <h2>Formulaire d'inscription</h2>
+
+    <form
+      action="https://www.formbackend.com/f/f7c0bdd838442f2f"
+      method="POST"
+      enctype="multipart/form-data"
+    >
+
+      <label>
+        Nom et prénom
+        <input
+          type="text"
+          name="nom"
+          required
+        >
+      </label>
+
+      <label>
+        Adresse e-mail
+        <input
+          type="email"
+          name="email"
+          required
+        >
+      </label>
+
+      <label>
+        Pays
+        <select name="pays" required>
+          <option value="">Choisir</option>
+          <option>Bénin</option>
+          <option>Sénégal</option>
+          <option>Togo</option>
+          <option>Niger</option>
+          <option>Côte d'Ivoire</option>
+          <option>Burkina Faso</option>
+          <option>Ghana</option>
+          <option>Autre</option>
+        </select>
+      </label>
+
+      <label>
+        Numéro WhatsApp
+        <input
+          type="tel"
+          name="whatsapp"
+          placeholder="+229 ..."
+          required
+        >
+      </label>
+
+      <label>
+        Travail recherché
+        <select name="emploi" required>
+          <option value="">Choisir</option>
+          <option>Chauffeur</option>
+          <option>Nounou</option>
+          <option>Ménage</option>
+        </select>
+      </label>
+
+      <div class="payment">
+        <b>💳 Paiement de l'inscription</b>
+
+        <p>
+          Frais d'inscription :
+          <strong>3 200 FCFA</strong>
+        </p>
+
+        <p>
+          Wave :
+          <strong>+227 77 30 87 60</strong>
+        </p>
+
+        <small>
+          Effectuez le paiement puis joignez la capture.
+        </small>
+      </div>
+
+      <label>
+        Capture du paiement
+        <input
+          type="file"
+          name="capture"
+          accept="image/png,image/jpeg,image/webp"
+          required
+        >
+      </label>
+
+      <input
+        type="hidden"
+        name="_subject"
+        value="Nouvelle inscription - Travailler en France"
+      >
+
+      <button type="submit">
+        Envoyer mon inscription
+      </button>
+
+    </form>
+
+  </section>
+
+  <section class="card hidden" id="ok">
+
+    <h2>✅ Inscription envoyée</h2>
+
+    <p>
+      Votre dossier a été enregistré.
+    </p>
+
+    <p>
+      Statut : <b class="valid">Validé</b>
+    </p>
+
+    <button onclick="location.reload()">
+      Nouvelle inscription
+    </button>
+
+  </section>
+
+</main>
+
+<footer>
+  © 2026 Travailler en France
+</footer>
+
+<script src="app.js"></script>
+
+</body>
+</html>
