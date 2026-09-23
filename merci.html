@@ -3,54 +3,281 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inscription envoyée</title>
+
+    <title>Merci pour votre inscription - Travailler en France</title>
+
     <style>
+        * {
+            box-sizing: border-box;
+        }
+
         body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            padding: 60px 20px;
-            background: #f5f7fb;
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f2f7fd;
+            color: #17365d;
+        }
+
+        /* HEADER */
+        header {
+            background: linear-gradient(135deg, #1455a0, #174b91);
+            color: white;
+            padding: 25px 20px;
+        }
+
+        .header-content {
+            max-width: 950px;
+            margin: auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .flag {
+            width: 58px;
+            height: 58px;
+            border-radius: 8px;
+            background: linear-gradient(
+                to right,
+                #123b88 0 33%,
+                white 33% 66%,
+                #ed2939 66% 100%
+            );
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+
+        .brand h1 {
+            margin: 0;
+            font-size: 30px;
+        }
+
+        .brand p {
+            margin: 5px 0 0;
+            font-size: 16px;
+            opacity: 0.9;
+        }
+
+        .home {
+            font-size: 34px;
+        }
+
+        /* MAIN */
+        main {
+            max-width: 850px;
+            margin: 65px auto;
+            padding: 0 20px;
         }
 
         .card {
-            max-width: 500px;
-            margin: auto;
             background: white;
-            padding: 35px 25px;
+            border-radius: 20px;
+            padding: 55px 35px;
+            text-align: center;
+            box-shadow: 0 10px 35px rgba(0, 50, 100, 0.12);
+        }
+
+        /* ICON */
+        .success-icon {
+            width: 125px;
+            height: 125px;
+            margin: 0 auto 25px;
+            border-radius: 50%;
+            background: #e8f5ee;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 65px;
+        }
+
+        h2 {
+            color: #164d96;
+            font-size: 38px;
+            line-height: 1.2;
+            margin: 15px 0;
+        }
+
+        .intro {
+            font-size: 21px;
+            color: #40546d;
+            margin-bottom: 35px;
+        }
+
+        /* EMAIL BOX */
+        .email-box {
+            background: #eef6ff;
             border-radius: 15px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            padding: 25px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            text-align: left;
+            margin: 30px 0;
+            border-left: 5px solid #1764c0;
         }
 
-        h1 {
-            color: #1f7a3f;
+        .email-icon {
+            font-size: 45px;
         }
 
-        p {
-            font-size: 18px;
-            line-height: 1.6;
+        .email-box strong {
+            color: #1455a0;
+            font-size: 20px;
+            line-height: 1.5;
+        }
+
+        .spam {
+            font-size: 17px;
+            color: #40546d;
+            margin-top: 25px;
+        }
+
+        .spam strong {
+            color: #164d96;
+        }
+
+        /* BUTTON */
+        .button {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 15px 30px;
+            background: #1455a0;
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: bold;
+            font-size: 17px;
+            transition: 0.2s;
+        }
+
+        .button:hover {
+            background: #0e4382;
+        }
+
+        /* FOOTER */
+        footer {
+            margin-top: 50px;
+            padding: 30px 20px;
+            text-align: center;
+            background: #1455a0;
+            color: white;
+        }
+
+        footer p {
+            margin: 5px;
+        }
+
+        .france-line {
+            height: 6px;
+            margin-top: 20px;
+            background: linear-gradient(
+                to right,
+                #1455a0 0 33%,
+                white 33% 66%,
+                #ed2939 66% 100%
+            );
+        }
+
+        /* MOBILE */
+        @media (max-width: 600px) {
+
+            header {
+                padding: 18px 15px;
+            }
+
+            .flag {
+                width: 45px;
+                height: 45px;
+            }
+
+            .brand h1 {
+                font-size: 21px;
+            }
+
+            .brand p {
+                font-size: 12px;
+            }
+
+            .home {
+                font-size: 27px;
+            }
+
+            main {
+                margin: 30px auto;
+            }
+
+            .card {
+                padding: 40px 20px;
+                border-radius: 16px;
+            }
+
+            .success-icon {
+                width: 100px;
+                height: 100px;
+                font-size: 52px;
+            }
+
+            h2 {
+                font-size: 29px;
+            }
+
+            .intro {
+                font-size: 18px;
+            }
+
+            .email-box {
+                padding: 20px;
+                gap: 12px;
+            }
+
+            .email-icon {
+                font-size: 35px;
+            }
+
+            .email-box strong {
+                font-size: 17px;
+            }
+
+            .spam {
+                font-size: 15px;
+            }
         }
     </style>
 </head>
 
 <body>
 
-<div class="card">
-    <h1>✅ Merci pour votre demande d'inscription !</h1>
+<header>
+    <div class="header-content">
 
-    <p>
-        Votre demande a bien été enregistrée.
-    </p>
+        <div class="brand">
+            <div class="flag"></div>
 
-    <p>
-        <strong>
-            Veuillez attendre la suite des informations dans votre e-mail.
-        </strong>
-    </p>
+            <div>
+                <h1>Travailler en France</h1>
+                <p>Des opportunités pour un meilleur avenir</p>
+            </div>
+        </div>
 
-    <p>
-        Pensez également à vérifier votre dossier <strong>Spam</strong>.
-    </p>
-</div>
+        <div class="home">⌂</div>
 
-</body>
-</html>
+    </div>
+</header>
+
+
+<main>
+
+    <div class="card">
+
+        <div class="success-icon">
+            ✉️✓
+        </div>
+
+        <h2>
+            Merci pour votre demande d'inscription !
+       
