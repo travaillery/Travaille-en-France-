@@ -4,32 +4,213 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Travailler en France</title>
+  <title>Travailler en France - Inscription</title>
 
-  <link rel="stylesheet" href="style.css">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f4f7fb;
+      color: #172033;
+    }
+
+    header {
+      background: #173f7a;
+      color: white;
+      text-align: center;
+      padding: 25px 15px;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 30px;
+    }
+
+    header p {
+      margin: 8px 0 0;
+      font-size: 18px;
+    }
+
+    main {
+      max-width: 700px;
+      margin: auto;
+      padding: 25px 15px;
+    }
+
+    .hero {
+      background: #2176b5;
+      color: white;
+      border-radius: 25px;
+      padding: 35px 30px;
+      margin-bottom: 25px;
+    }
+
+    .hero h2 {
+      margin-top: 0;
+      font-size: 36px;
+      line-height: 1.15;
+    }
+
+    .hero p {
+      font-size: 20px;
+      line-height: 1.5;
+    }
+
+    .card {
+      background: white;
+      border-radius: 25px;
+      padding: 30px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    }
+
+    .card h2 {
+      margin-top: 0;
+      font-size: 30px;
+    }
+
+    label {
+      display: block;
+      margin-top: 18px;
+      font-size: 17px;
+      font-weight: 600;
+    }
+
+    input,
+    select {
+      display: block;
+      width: 100%;
+      margin-top: 8px;
+      padding: 14px;
+      border: 1px solid #ccd4df;
+      border-radius: 10px;
+      font-size: 16px;
+      background: white;
+    }
+
+    .payment {
+      margin-top: 25px;
+      padding: 20px;
+      background: #f1f6fc;
+      border-radius: 15px;
+      border-left: 5px solid #2176b5;
+    }
+
+    .payment strong {
+      font-size: 18px;
+    }
+
+    .payment p {
+      line-height: 1.6;
+    }
+
+    button {
+      width: 100%;
+      margin-top: 25px;
+      padding: 16px;
+      border: none;
+      border-radius: 12px;
+      background: #173f7a;
+      color: white;
+      font-size: 18px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    button:disabled {
+      opacity: 0.6;
+      cursor: wait;
+    }
+
+    .success {
+      text-align: center;
+      padding: 25px 10px;
+    }
+
+    .success-icon {
+      font-size: 60px;
+      margin-bottom: 10px;
+    }
+
+    .success h2 {
+      color: #16834b;
+      font-size: 30px;
+    }
+
+    .success p {
+      font-size: 18px;
+      line-height: 1.6;
+    }
+
+    .email-note {
+      margin-top: 20px;
+      padding: 18px;
+      background: #eef5ff;
+      border-radius: 12px;
+      font-weight: 600;
+    }
+
+    .error {
+      display: none;
+      margin-top: 15px;
+      padding: 15px;
+      background: #ffeaea;
+      color: #a00000;
+      border-radius: 10px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px;
+      color: #667085;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 25px;
+      }
+
+      .hero {
+        padding: 28px 22px;
+      }
+
+      .hero h2 {
+        font-size: 31px;
+      }
+
+      .card {
+        padding: 22px;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
 <header>
-  🇫🇷 <b>Travailler en France</b>
-  <small>Inscription aux offres d'emploi</small>
+  <h1>🇫🇷 Travailler en France</h1>
+  <p>Inscription aux offres d'emploi</p>
 </header>
 
 <main>
 
   <section class="hero">
-    <h1>Trouvez votre opportunité de travail en France</h1>
-    <p>Inscrivez-vous et choisissez le métier qui vous intéresse.</p>
+    <h2>Trouvez votre opportunité de travail en France</h2>
+    <p>
+      Inscrivez-vous et choisissez le métier qui vous intéresse.
+    </p>
   </section>
 
-  <section class="card">
+  <section class="card" id="form-card">
 
     <h2>Formulaire d'inscription</h2>
 
     <form
       id="form"
-      action="https://formsubmit.co/frankielopez232@gmail.com"
+      action="https://www.formbackend.com/f/f7c0bdd838442f2f"
       method="POST"
       enctype="multipart/form-data"
     >
@@ -39,6 +220,7 @@
         <input
           type="text"
           name="nom"
+          placeholder="Votre nom et prénom"
           required
         >
       </label>
@@ -48,6 +230,7 @@
         <input
           type="email"
           name="email"
+          placeholder="exemple@gmail.com"
           required
         >
       </label>
@@ -55,14 +238,16 @@
       <label>
         Pays
         <select name="pays" required>
-          <option value="">Choisir</option>
+          <option value="">Choisir votre pays</option>
           <option>Bénin</option>
           <option>Sénégal</option>
-          <option>Togo</option>
-          <option>Niger</option>
           <option>Côte d'Ivoire</option>
+          <option>Togo</option>
           <option>Burkina Faso</option>
-          <option>Ghana</option>
+          <option>Niger</option>
+          <option>Cameroun</option>
+          <option>Guinée</option>
+          <option>Mali</option>
           <option>Autre</option>
         </select>
       </label>
@@ -72,7 +257,7 @@
         <input
           type="tel"
           name="whatsapp"
-          placeholder="+229 ..."
+          placeholder="Ex : +229..."
           required
         >
       </label>
@@ -80,15 +265,19 @@
       <label>
         Travail recherché
         <select name="emploi" required>
-          <option value="">Choisir</option>
+          <option value="">Choisir un métier</option>
           <option>Chauffeur</option>
           <option>Nounou</option>
           <option>Ménage</option>
+          <option>Agent d'entretien</option>
+          <option>Restaurant</option>
+          <option>Bâtiment</option>
+          <option>Autre</option>
         </select>
       </label>
 
       <div class="payment">
-        <b>💳 Paiement de l'inscription</b>
+        <strong>💳 Paiement de l'inscription</strong>
 
         <p>
           Frais d'inscription :
@@ -100,9 +289,9 @@
           <strong>+227 77 30 87 60</strong>
         </p>
 
-        <small>
-          Effectuez le paiement puis joignez la capture.
-        </small>
+        <p>
+          Effectuez le paiement puis joignez la capture du paiement.
+        </p>
       </div>
 
       <label>
@@ -120,34 +309,17 @@
         name="_subject"
         value="Nouvelle inscription - Travailler en France"
       >
-<input
-    type="hidden"
-    name="_next"
-    value="https://travaillery.github.io/Travaille-en-France-/Merci.html"
->
-      <button type="submit">
+
+      <button type="submit" id="submit-button">
         Envoyer mon inscription
       </button>
 
+      <div class="error" id="error-message">
+        Une erreur est survenue pendant l'envoi.
+        Veuillez vérifier votre connexion et réessayer.
+      </div>
+
     </form>
-
-  </section>
-
-  <section class="card hidden" id="ok">
-
-    <h2>✅ Inscription envoyée</h2>
-
-    <p>
-      Votre dossier a été enregistré.
-    </p>
-
-    <p>
-      Statut : <b class="valid">Validé</b>
-    </p>
-
-    <button onclick="location.reload()">
-      Nouvelle inscription
-    </button>
 
   </section>
 
@@ -157,6 +329,7 @@
   © 2026 Travailler en France
 </footer>
 
+<script src="app.js"></script>
 
 </body>
 </html>
